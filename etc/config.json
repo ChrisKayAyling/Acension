@@ -1,0 +1,11 @@
+{
+  "Database": {
+    "Hostname": "",
+    "Database": "",
+    "UID": "",
+    "PWD": ""
+  },
+  "Instance": {
+    "Domain": ""
+  }
+}
