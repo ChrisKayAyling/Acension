@@ -11,7 +11,7 @@ class ExampleDataStorageObject
     /**
      * Example construct
      */
-    public function __construct($Hostname, $Username, $Password, $Database) {
+    public function __construct($Settings) {
         $this->connect();
     }
 

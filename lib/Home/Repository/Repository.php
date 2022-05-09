@@ -1,12 +1,12 @@
 <?php
 
-namespace API\Repository;
+namespace Home\Repository;
 
-use API\Interfaces\IRepository;
+use Home\Interfaces\IRepository;
 
 /**
  * Class Repository
- * @package API\Repository
+ * @package Home\Repository
  */
 class Repository implements IRepository
 {
