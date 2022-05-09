@@ -6,6 +6,7 @@ require_once('../vendor/autoload.php');
 
 /* Verbose debugging */
 Core::$Debug = false;
+Core::$TemplateDevelopmentMode = true;
 
 // Default Routing
 Core::$defaultRouting['controller'] = "Home";
