@@ -60,7 +60,6 @@ class Controller
      */
     public function main()
     {
-
         $this->data = array(
             "Information" => "Ascension CMS/API Framework",
             "Route" => "Default",
