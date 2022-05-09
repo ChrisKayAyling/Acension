@@ -1,7 +1,6 @@
 <?php
 
 use Ascension\Core;
-use CMA\DatabaseConnector\MSSQLConnector;
 
 require_once('../vendor/autoload.php');
 
@@ -14,7 +13,7 @@ try {
 }
 
 Core::addDataStorageObject("Default",
-    new MSSQLConnector(
+    new \DataStorageObjects\ExampleDataStorageObject(
         Core::$Resources['Settings']->Database->Hostname,
         Core::$Resources['Settings']->Database->Database,
         Core::$Resources['Settings']->Database->UID,
