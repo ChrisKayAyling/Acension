@@ -1,5 +1,7 @@
 # Ascension CMS/API Framework
 
+## *A CMS built by a developer for developers to allow high customisation*.
+
 ## Getting started
 
 To get started you will need to ensure you have composer installed on your system, this can be either system wide or local for the project. It is recommended that you install it system wide for ease.
