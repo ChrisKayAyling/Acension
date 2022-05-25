@@ -113,6 +113,16 @@ Each repository is provided with two objects passed via the core framework provi
 | DataStorage | Data storage object providing access to external systems
 | Settings | Object->Property based access to the settings file.|
 
+### Custom Template Override
 
+The built in templates can be overriden by using the following in the index.php file.
+
+```
+
+Core::addCustomTemplate('Header', 'header.twig');
+
+```
+
+You are able to override the following: Header, Navigation, Footer, these overrides must be located within the templates directory in your project. Path can be specified by using the `DS` constant that is set as per Operating System.
 
 Authored by Chris Kay-Ayling 2022
