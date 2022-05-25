@@ -1,4 +1,4 @@
-# Ascension CMS/API Framework
+# Ascension Framework
 
 ## *A CMS built by a developer for developers to allow high customisation*.
 
