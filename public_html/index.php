@@ -4,26 +4,37 @@ use Ascension\Core;
 
 require_once('../vendor/autoload.php');
 
-/* Verbose debugging */
 Core::$Debug = false;
 Core::$TemplateDevelopmentMode = true;
 
-// Default Routing
-Core::$defaultRouting['controller'] = "Home";
-Core::$defaultRouting['method'] = "main";
-
-/* Do not edit below this line */
-
 try {
+    /* Load Core settings */
     Core::__loadSettings();
+    /* End load core settings */
+
+    /* Add Custom Templating Objects */
+    Core::addCustomTemplate('Header', 'header.twig');
+    /* End Custom Templating */
+
+    /* Support Cli based routing */
+    if (isset($argv[1]) && isset($argv[2])) {
+        Core::$defaultRouting['controller'] = $argv[1];
+        Core::$defaultRouting['method'] = $argv[2];
+    } else {
+        Core::$defaultRouting['controller'] = "Home";
+        Core::$defaultRouting['method'] = "main";
+    }
+    /* End of support for Cli based routing
+
+    /* Add data storage objects here */
     Core::addDataStorageObjects();
+    /* End of addDataStorageObjects */
+
+    Core::ascend();
+
 } catch (Exception $e) {
     d($e);
+    if (isset($e['xdebug_message'])) {
+        echo $e['xdebug_message'];
+    }
 }
-
-try {
-    Core::ascend();
-} catch (\Exception $e) {
-    d($e);
-}
-
