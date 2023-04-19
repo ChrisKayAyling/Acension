@@ -3,6 +3,7 @@ namespace Home\Controller;
 
 use Home\Repository\Repository;
 use Ascension\HTTP;
+use Ascension\Core;
 
 /**
  * Class Controller
@@ -56,6 +57,9 @@ class Controller
      */
     public function main()
     {
+
+        $this->data['DatabaseResult'] = Core::$Resources['DataStorage']['SQLiteConnector']->query("SELECT * FROM main");
+
         $this->templates = array();
         $this->templates[] = "default.twig";
     }

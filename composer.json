@@ -2,7 +2,8 @@
     "name": "chriskayayling/ascensioncms",
     "description": "Ascension CMS PHP Framework",
     "require": {
-        "ascension/core": "1.1.*"
+        "ascension/core": "1.1.*",
+        "ext-sqlite3": "*"
     },
     "repositories": [
         {
