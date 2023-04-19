@@ -54,7 +54,14 @@ address these classes with ease.
 ### Adding DataStorage Objects
 
 To add access to other systems classes can be created under the PSR-0 root "<b>lib/</b>" these classes are free in terms
-of functionality and structure but it is recommended that they follow the example as a bare minimum
+of functionality and structure but it is recommended that they follow the example as a bare minimum.
+
+Example usage:
+```
+use Ascension\Core;
+...
+$result = Core::$Resources['DataStorage']['SQLiteConnector']->query("SELECT * FROM main");
+```
 
 
 ### Controllers
