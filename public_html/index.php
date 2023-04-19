@@ -13,7 +13,9 @@ try {
     /* End load core settings */
 
     /* Add Custom Templating Objects */
-    Core::addCustomTemplate('Header', 'header.twig');
+    Core::addCustomTemplate('Header', 'components/header.twig');
+    Core::addCustomTemplate('Navigation', 'components/navigation.twig');
+    Core::addCustomTemplate('Footer', 'components/footer.twig');
     /* End Custom Templating */
 
     /* Support Cli based routing */
