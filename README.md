@@ -4,6 +4,15 @@
 
 ## Getting started
 
+
+## Requirements
+This framework makes use of PHP8.1 since version 1.1.* You will also need the following php-extensions enabled:
+```
+simplexml
+curl
+sqlite3
+```
+
 To get started you will need to ensure you have composer installed on your system, this can be either system wide or local for the project. It is recommended that you install it system wide for ease.
 
 ```
@@ -29,6 +38,14 @@ public_html/
 ```
 
 ## Developing
+
+### Create new routes using the builder
+To create new routes within the framework the bundled ascend.sh script will enable you to create areas simply using the built in scaffholding. These files are found under the builder folder and can be modified where the 
+framework is being utilised in an environment where a number of changes span more than one controller. 
+
+```
+./ascend.sh -n NewAreaName
+```
 
 ### Developing new areas of functionality
 Areas of business logic should be implemented under the lib folder utilising PSR-0 namespacing this will ensure the dependancy injection is able to
