@@ -8,6 +8,7 @@ Core::$Debug = false;
 Core::$TemplateDevelopmentMode = true;
 
 try {
+    session_start();
     /* Load Core settings */
     Core::__loadSettings();
     /* End load core settings */
