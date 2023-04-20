@@ -76,6 +76,10 @@
     }
 }
 
+md-block {
+    font-family: monospace;
+}
+
 body {
     margin: 0;
     font-family: var(--bs-body-font-family);
