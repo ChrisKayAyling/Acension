@@ -1,22 +1,90 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="#">Content Management System</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="/ControlPanel">Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="/ControlPanel/Logout">Logout</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
+<div class="navbar-bg" style="height:65px;"></div>
+<nav class="navbar navbar-expand-lg main-navbar">
+    <form class="form-inline mr-auto">
+        <ul class="navbar-nav mr-3">
+            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
+            <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i
+                            class="fas fa-search"></i></a></li>
+        </ul>
+    </form>
+    <ul class="navbar-nav navbar-right">
+        <li class="dropdown"><a href="#" data-toggle="dropdown"
+                                class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                <img alt="image" src="/assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
+                {% if data.User %}
+                    <div class="d-sm-none d-lg-inline-block">Hi, {{ data.User }}</div>
+                {% else %}
+                    <div class="d-sm-none d-lg-inline-block">Guest</div>
+                {% endif %}
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                {% if data.User %}
+                    <div class="dropdown-title">Logged in 5 min ago</div>
+                {% else %}
+                    <div class="dropdown-title">Menu</div>
+                {% endif %}
+                <div class="dropdown-divider"></div>
+
+                {% if data.User %}
+                <a href="#" class="dropdown-item has-icon text-danger">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+                {% else %}
+                    <a href="/ControlPanel/" class="dropdown-item has-icon text-danger">
+                        <i class="fas fa-sign-out-alt"></i> Login
+                    </a>
+                {% endif %}
+            </div>
+        </li>
+    </ul>
 </nav>
+
+
+<div class="main-sidebar sidebar-style-2">
+    <aside id="sidebar-wrapper">
+        <div class="sidebar-brand">
+            <a href="index.html">Ascension CMS</a>
+        </div>
+        <div class="sidebar-brand sidebar-brand-sm">
+            <a href="index.html">St</a>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="menu-header">Dashboard</li>
+            <li class="dropdown active" style="display:block;">
+                <a href="/" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Home</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="index-0.html">Sub Item 1</a></li>
+                    <li class=active><a class="nav-link" href="index.html">Sub Item 2 (Active)</a></li>
+                </ul>
+            </li>
+            <li class="menu-header">Functions</li>
+            <li class="dropdown active">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Item #2</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="#"><i
+                                    class="fas fa-coins"></i><span>Sub Item 1</span></a></li>
+                    <li><a class="nav-link" href="#"><i
+                                    class="fas fa-coins"></i><span>Sub Item 2</span></a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown active">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Item #3</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="#"><i
+                                    class="fas fa-coins"></i><span>Sub Item #1</span></a></li>
+
+                </ul>
+            </li>
+
+            <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
+        </ul>
+
+        <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
+            <a href="https://github.com/ChrisKayAyling/Acension"
+               class="btn btn-primary btn-lg btn-block btn-icon-split">
+                <i class="fas fa-question"></i> Help
+            </a>
+        </div>
+    </aside>
+</div>

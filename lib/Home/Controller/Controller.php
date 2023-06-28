@@ -57,6 +57,9 @@ class Controller
      */
     public function main()
     {
+        if (isset($_SESSION['User'])) {
+            $this->data['User'] = $_SESSION['User'];
+        }
 
         $this->data['DatabaseResult'] = Core::$Resources['DataStorage']['SQLiteConnector']->query("SELECT * FROM main");
 

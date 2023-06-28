@@ -28,7 +28,13 @@ After installation you update the required dependancies that will also install t
 composer update
 ```
 
-### Serving the CMS
+### System 
+
+Debian 10/11 / Ubuntu 22.04
+
+```
+apt-get install nginx php-fpm php-curl php-cli php-sqlite3 php-cli php-simplexml
+```
 
 Set your web root to the following:
  
@@ -138,6 +144,29 @@ Each repository is provided with two objects passed via the core framework provi
 |-------------| -----------| 
 | DataStorage | Data storage object providing access to external systems
 | Settings | Object->Property based access to the settings file.|
+
+
+## AppSettings (Application Based Settings)
+Ascension core will load if present a SQLite database witin the following directory
+
+```
+CMS Root: /etc/db.db
+```
+
+Within the settings table in this database you will be tasked to provide the following:
+
+```
+Name - Name of setting
+Value - Value of setting
+Group - Used to group settings
+Environment - Used to identify the setting as per the environment.
+```
+
+AppSettings can then be accessed using the following example:
+
+```
+Core::$Resources['AppSettings']->Development['Endpoint']->Value
+```
 
 ### Custom Template Override
 
