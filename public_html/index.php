@@ -21,11 +21,11 @@ try {
 
     /* Support Cli based routing */
     if (isset($argv[1]) && isset($argv[2])) {
-        Core::$defaultRouting['controller'] = $argv[1];
-        Core::$defaultRouting['method'] = $argv[2];
+        Core::$Route['controller'] = $argv[1];
+        Core::$Route['method'] = $argv[2];
     } else {
-        Core::$defaultRouting['controller'] = "Home";
-        Core::$defaultRouting['method'] = "main";
+        Core::$Route['controller'] = "Home";
+        Core::$Route['method'] = "main";
     }
     /* End of support for Cli based routing
 
@@ -36,8 +36,5 @@ try {
     Core::ascend();
 
 } catch (Exception $e) {
-    d($e);
-    if (isset($e['xdebug_message'])) {
-        echo $e['xdebug_message'];
-    }
+    new Ascension\ExceptionPrinter($e->getMessage());
 }
