@@ -61,7 +61,7 @@ class Controller
             $this->data['User'] = $_SESSION['User'];
         }
 
-        $this->data['DatabaseResult'] = Core::$Resources['DataStorage']['SQLiteConnector']->query("SELECT * FROM main");
+        $this->data['DatabaseResult'] = Core::$Resources['DataStorage']['core']->query("SELECT * FROM main");
 
         $this->templates = array();
         $this->templates[] = "default.twig";

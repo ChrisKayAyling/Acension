@@ -1,10 +1,10 @@
 {
-  "Database": {
-    "Hostname": "",
-    "Database": "",
-    "UID": "",
-    "PWD": ""
-  },
+  "DataConnectors": [
+    {
+      "Connector": "SQLiteConnector",
+      "Database": "core"
+    }
+  ],
   "Instance": {
     "Domain": ""
   }
