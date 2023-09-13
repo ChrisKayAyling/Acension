@@ -77,7 +77,7 @@ class Controller
     public function loginSubmit() {
         if (isset($this->Request->data['Username']) && isset($this->Request->data['Password'])) {
 
-            $UserID = Core::$Resources['DataStorage']['SQLiteConnector']->query(
+            $UserID = Core::$Resources['DataStorage']['core']->query(
                 sprintf(
                     "SELECT ID FROM users WHERE Username = '%s' AND Password = '%s'",
                     $this->Request->data['Username'],
@@ -87,12 +87,15 @@ class Controller
             if ($UserID !== NULL) {
                 $_SESSION['User'] = $UserID;
                 $this->templates[] = "ControlPanel/default.twig";
+                return true;
             } else {
                 $this->templates[] = "ControlPanel/loginfailed.twig";
+                return false;
             }
 
         } else {
             $this->templates[] = "ControlPanel/loginfailed.twig";
+            return false;
         }
     }
 

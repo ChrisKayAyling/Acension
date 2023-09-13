@@ -2,7 +2,6 @@
 
 namespace Home\Interfaces;
 
-
 interface IRepository
 {
 
